@@ -39,12 +39,12 @@ func main() {
     res, err := s.Orders.CreateOrder(ctx, operations.CreateOrderRequest{
         RequestBody: []shared.OrderInput{
             shared.OrderInput{
-                ProductCode: "NAC-3F2D1",
-                Quantity: 392785,
-                Type: shared.OrderTypeIngredient,
+                ProductCode: "APM-1F2D3",
+                Quantity: 26535,
+                Type: shared.OrderTypeDrink,
             },
         },
-        CallbackURL: testbar.String("temporibus"),
+        CallbackURL: testbar.String("corrupti"),
     })
     if err != nil {
         log.Fatal(err)

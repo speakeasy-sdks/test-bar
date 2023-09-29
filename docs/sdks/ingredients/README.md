@@ -36,7 +36,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Ingredients.ListIngredients(ctx, operations.ListIngredientsRequest{
         Ingredients: []string{
-            "iusto",
+            "Cloned",
         },
     })
     if err != nil {

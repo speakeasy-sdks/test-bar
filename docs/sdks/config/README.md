@@ -32,8 +32,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Config.SubscribeToWebhooks(ctx, []SubscribeToWebhooksRequestBody{
         operations.SubscribeToWebhooksRequestBody{
-            URL: testbar.String("ipsa"),
-            Webhook: testbar.String("delectus"),
+            URL: testbar.String("https://well-worn-diver.biz"),
+            Webhook: testbar.String("gosh Northeast"),
         },
     })
     if err != nil {

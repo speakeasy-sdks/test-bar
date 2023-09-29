@@ -36,7 +36,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Drinks.GetDrink(ctx, operations.GetDrinkRequest{
-        Name: "Laurie Kreiger",
+        Name: "North District",
     })
     if err != nil {
         log.Fatal(err)
@@ -87,7 +87,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Drinks.ListDrinks(ctx, operations.ListDrinksRequest{
-        DrinkType: shared.DrinkTypeWine.ToPointer(),
+        DrinkType: shared.DrinkTypeSpirit.ToPointer(),
     })
     if err != nil {
         log.Fatal(err)

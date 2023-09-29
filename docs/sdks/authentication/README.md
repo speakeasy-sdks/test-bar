@@ -35,8 +35,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Authentication.Authenticate(ctx, operations.AuthenticateRequestBody{
-        Password: testbar.String("deserunt"),
-        Username: testbar.String("Gerda89"),
+        Password: testbar.String("Nxq_X5HXg1lXJa5"),
+        Username: testbar.String("Asa_Stamm77"),
     })
     if err != nil {
         log.Fatal(err)
