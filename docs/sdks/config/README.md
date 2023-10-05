@@ -33,7 +33,7 @@ func main() {
     res, err := s.Config.SubscribeToWebhooks(ctx, []SubscribeToWebhooksRequestBody{
         operations.SubscribeToWebhooksRequestBody{
             URL: testbar.String("https://well-worn-diver.biz"),
-            Webhook: testbar.String("gosh Northeast"),
+            Webhook: operations.SubscribeToWebhooksRequestBodyWebhookStockUpdate.ToPointer(),
         },
     })
     if err != nil {

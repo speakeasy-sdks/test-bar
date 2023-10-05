@@ -3,26 +3,39 @@
 package operations
 
 import (
+	"encoding/json"
+	"fmt"
 	"github.com/speakeasy-sdks/test-bar/pkg/models/shared"
-	"github.com/speakeasy-sdks/test-bar/pkg/types"
-	"github.com/speakeasy-sdks/test-bar/pkg/utils"
 	"net/http"
 )
 
-type SubscribeToWebhooksRequestBody struct {
-	URL     *string `json:"url,omitempty"`
-	webhook *string `const:"stockUpdate" json:"webhook,omitempty"`
+type SubscribeToWebhooksRequestBodyWebhook string
+
+const (
+	SubscribeToWebhooksRequestBodyWebhookStockUpdate SubscribeToWebhooksRequestBodyWebhook = "stockUpdate"
+)
+
+func (e SubscribeToWebhooksRequestBodyWebhook) ToPointer() *SubscribeToWebhooksRequestBodyWebhook {
+	return &e
 }
 
-func (s SubscribeToWebhooksRequestBody) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(s, "", false)
-}
-
-func (s *SubscribeToWebhooksRequestBody) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &s, "", false, false); err != nil {
+func (e *SubscribeToWebhooksRequestBodyWebhook) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
 		return err
 	}
-	return nil
+	switch v {
+	case "stockUpdate":
+		*e = SubscribeToWebhooksRequestBodyWebhook(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for SubscribeToWebhooksRequestBodyWebhook: %v", v)
+	}
+}
+
+type SubscribeToWebhooksRequestBody struct {
+	URL     *string                                `json:"url,omitempty"`
+	Webhook *SubscribeToWebhooksRequestBodyWebhook `json:"webhook,omitempty"`
 }
 
 func (o *SubscribeToWebhooksRequestBody) GetURL() *string {
@@ -32,8 +45,11 @@ func (o *SubscribeToWebhooksRequestBody) GetURL() *string {
 	return o.URL
 }
 
-func (o *SubscribeToWebhooksRequestBody) GetWebhook() *string {
-	return types.String("stockUpdate")
+func (o *SubscribeToWebhooksRequestBody) GetWebhook() *SubscribeToWebhooksRequestBodyWebhook {
+	if o == nil {
+		return nil
+	}
+	return o.Webhook
 }
 
 type SubscribeToWebhooksResponse struct {
