@@ -25,7 +25,6 @@ import(
 	"github.com/speakeasy-sdks/test-bar/pkg/models/shared"
 	"github.com/speakeasy-sdks/test-bar/pkg/models/operations"
 	"github.com/speakeasy-sdks/test-bar/pkg/models/callbacks"
-	"net/http"
 )
 
 func main() {
@@ -44,7 +43,6 @@ func main() {
                 Type: shared.OrderTypeDrink,
             },
         },
-        CallbackURL: testbar.String("corrupti"),
     })
     if err != nil {
         log.Fatal(err)

@@ -86,9 +86,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Drinks.ListDrinks(ctx, operations.ListDrinksRequest{
-        DrinkType: shared.DrinkTypeSpirit.ToPointer(),
-    })
+    res, err := s.Drinks.ListDrinks(ctx, operations.ListDrinksRequest{})
     if err != nil {
         log.Fatal(err)
     }
