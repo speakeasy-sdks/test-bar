@@ -19,33 +19,32 @@ go get github.com/speakeasy-sdks/test-bar
 ```go
 package main
 
-import(
+import (
 	"context"
-	"log"
 	testbar "github.com/speakeasy-sdks/test-bar"
-	"github.com/speakeasy-sdks/test-bar/pkg/models/shared"
 	"github.com/speakeasy-sdks/test-bar/pkg/models/operations"
+	"github.com/speakeasy-sdks/test-bar/pkg/models/shared"
+	"log"
 )
 
 func main() {
-    s := testbar.New(
-        testbar.WithSecurity(shared.Security{
-            APIKey: "",
-        }),
-    )
+	s := testbar.New(
+		testbar.WithSecurity(""),
+	)
 
-    ctx := context.Background()
-    res, err := s.Drinks.GetDrink(ctx, operations.GetDrinkRequest{
-        Name: "North District",
-    })
-    if err != nil {
-        log.Fatal(err)
-    }
+	ctx := context.Background()
+	res, err := s.Drinks.GetDrink(ctx, operations.GetDrinkRequest{
+		Name: "North District",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    if res.Drink != nil {
-        // handle response
-    }
+	if res.Drink != nil {
+		// handle response
+	}
 }
+
 ```
 <!-- End SDK Example Usage -->
 

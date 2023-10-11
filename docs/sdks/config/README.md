@@ -24,9 +24,7 @@ import(
 
 func main() {
     s := testbar.New(
-        testbar.WithSecurity(shared.Security{
-            APIKey: "",
-        }),
+        testbar.WithSecurity(""),
     )
 
     ctx := context.Background()
