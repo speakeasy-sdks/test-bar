@@ -34,7 +34,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Ingredients.ListIngredients(ctx, operations.ListIngredientsRequest{
         Ingredients: []string{
-            "Cloned",
+            "string",
         },
     })
     if err != nil {
