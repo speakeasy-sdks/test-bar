@@ -15,20 +15,20 @@ import (
 	"strings"
 )
 
-// The orders endpoints.
-type orders struct {
+// Orders - The orders endpoints.
+type Orders struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newOrders(sdkConfig sdkConfiguration) *orders {
-	return &orders{
+func newOrders(sdkConfig sdkConfiguration) *Orders {
+	return &Orders{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // CreateOrder - Create an order.
 // Create an order for a drink.
-func (s *orders) CreateOrder(ctx context.Context, request operations.CreateOrderRequest) (*operations.CreateOrderResponse, error) {
+func (s *Orders) CreateOrder(ctx context.Context, request operations.CreateOrderRequest) (*operations.CreateOrderResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/order"
 

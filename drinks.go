@@ -15,20 +15,20 @@ import (
 	"strings"
 )
 
-// The drinks endpoints.
-type drinks struct {
+// Drinks - The drinks endpoints.
+type Drinks struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newDrinks(sdkConfig sdkConfiguration) *drinks {
-	return &drinks{
+func newDrinks(sdkConfig sdkConfiguration) *Drinks {
+	return &Drinks{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetDrink - Get a drink.
 // Get a drink by name, if authenticated this will include stock levels and product codes otherwise it will only include public information.
-func (s *drinks) GetDrink(ctx context.Context, request operations.GetDrinkRequest) (*operations.GetDrinkResponse, error) {
+func (s *Drinks) GetDrink(ctx context.Context, request operations.GetDrinkRequest) (*operations.GetDrinkResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/drink/{name}", request, nil)
 	if err != nil {
@@ -111,7 +111,7 @@ func (s *drinks) GetDrink(ctx context.Context, request operations.GetDrinkReques
 
 // ListDrinks - Get a list of drinks.
 // Get a list of drinks, if authenticated this will include stock levels and product codes otherwise it will only include public information.
-func (s *drinks) ListDrinks(ctx context.Context, request operations.ListDrinksRequest) (*operations.ListDrinksResponse, error) {
+func (s *Drinks) ListDrinks(ctx context.Context, request operations.ListDrinksRequest) (*operations.ListDrinksResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/drinks"
 
@@ -159,7 +159,7 @@ func (s *drinks) ListDrinks(ctx context.Context, request operations.ListDrinksRe
 				return nil, err
 			}
 
-			res.Drinks = out
+			res.Classes = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

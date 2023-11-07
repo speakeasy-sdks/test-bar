@@ -84,14 +84,14 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 // https://docs.speakeasy.bar - The Speakeasy Bar Documentation.
 type TestBar struct {
 	// The authentication endpoints.
-	Authentication *authentication
-	Config         *config
+	Authentication *Authentication
 	// The drinks endpoints.
-	Drinks *drinks
+	Drinks *Drinks
 	// The ingredients endpoints.
-	Ingredients *ingredients
+	Ingredients *Ingredients
 	// The orders endpoints.
-	Orders *orders
+	Orders *Orders
+	Config *Config
 
 	sdkConfiguration sdkConfiguration
 }
@@ -219,9 +219,9 @@ func New(opts ...SDKOption) *TestBar {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "0.4.0",
-			GenVersion:        "2.169.0",
-			UserAgent:         "speakeasy-sdk/go 0.4.0 2.169.0 1.0.0 github.com/speakeasy-sdks/test-bar",
+			SDKVersion:        "0.5.0",
+			GenVersion:        "2.181.1",
+			UserAgent:         "speakeasy-sdk/go 0.5.0 2.181.1 1.0.0 github.com/speakeasy-sdks/test-bar",
 			ServerDefaults: map[string]map[string]string{
 				"prod":    {},
 				"staging": {},
@@ -250,13 +250,13 @@ func New(opts ...SDKOption) *TestBar {
 
 	sdk.Authentication = newAuthentication(sdk.sdkConfiguration)
 
-	sdk.Config = newConfig(sdk.sdkConfiguration)
-
 	sdk.Drinks = newDrinks(sdk.sdkConfiguration)
 
 	sdk.Ingredients = newIngredients(sdk.sdkConfiguration)
 
 	sdk.Orders = newOrders(sdk.sdkConfiguration)
+
+	sdk.Config = newConfig(sdk.sdkConfiguration)
 
 	return sdk
 }
