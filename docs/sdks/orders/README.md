@@ -24,7 +24,6 @@ import(
 	testbar "github.com/speakeasy-sdks/test-bar"
 	"github.com/speakeasy-sdks/test-bar/pkg/models/shared"
 	"github.com/speakeasy-sdks/test-bar/pkg/models/operations"
-	"github.com/speakeasy-sdks/test-bar/pkg/models/callbacks"
 )
 
 func main() {
