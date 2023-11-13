@@ -5,9 +5,15 @@ management:
   speakeasyVersion: 1.118.3
   generationVersion: 2.187.7
 generation:
-  comments: {}
-  sdkClassName: test-bar
+  comments:
+    disableComments: false
+    omitDescriptionIfSummaryPresent: false
+  baseServerURL: ""
+  flattenGlobalSecurity: true
   repoURL: https://github.com/speakeasy-sdks/test-bar.git
+  sdkClassName: test-bar
+  singleTagPerOp: false
+  tagNamespacingDisabled: false
   usageSnippets:
     optionalPropertyRendering: withExample
 features:
