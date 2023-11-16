@@ -113,8 +113,10 @@ package main
 
 import (
 	"context"
+	"errors"
 	testbar "github.com/speakeasy-sdks/test-bar"
 	"github.com/speakeasy-sdks/test-bar/pkg/models/operations"
+	"github.com/speakeasy-sdks/test-bar/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/test-bar/pkg/models/shared"
 	"log"
 )
@@ -283,7 +285,6 @@ import (
 	"context"
 	testbar "github.com/speakeasy-sdks/test-bar"
 	"github.com/speakeasy-sdks/test-bar/pkg/models/operations"
-	"github.com/speakeasy-sdks/test-bar/pkg/models/shared"
 	"log"
 )
 
