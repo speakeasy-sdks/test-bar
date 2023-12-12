@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 8f27a31f7c8db7031d59e44e22e0a9d2
   docVersion: 1.0.0
-  speakeasyVersion: 1.121.3
-  generationVersion: 2.195.2
+  speakeasyVersion: 1.126.0
+  generationVersion: 2.213.3
 generation:
   comments: {}
   sdkClassName: test-bar
@@ -14,15 +14,16 @@ generation:
   flattenGlobalSecurity: true
 features:
   go:
-    core: 3.1.5
+    core: 3.2.0
     errors: 2.81.8
     examples: 2.81.3
-    globalSecurity: 2.82.2
+    globalSecurity: 2.82.3
     globalServerURLs: 2.82.1
     inputOutputModels: 2.82.0
+    methodSecurity: 2.82.1
     serverIDs: 2.81.1
 go:
-  version: 0.6.3
+  version: 0.7.0
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   imports:

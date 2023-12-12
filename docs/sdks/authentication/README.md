@@ -28,7 +28,7 @@ import(
 
 func main() {
     s := testbar.New(
-        testbar.WithSecurity(""),
+        testbar.WithSecurity("<YOUR_API_KEY_HERE>"),
     )
 
     ctx := context.Background()
