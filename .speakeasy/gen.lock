@@ -4,16 +4,16 @@ management:
   docChecksum: 8f27a31f7c8db7031d59e44e22e0a9d2
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.225.2
-  releaseVersion: 0.8.0
-  configChecksum: ac286a3850e3ec6da1db4e2b09f9a6d5
+  generationVersion: 2.234.3
+  releaseVersion: 0.8.1
+  configChecksum: 747880a1dbba2ea1899817d3f98b8e7c
   repoURL: https://github.com/speakeasy-sdks/test-bar.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/test-bar
   published: true
 features:
   go:
-    core: 3.3.0
+    core: 3.3.1
     errors: 2.81.8
     examples: 2.81.3
     globalSecurity: 2.82.3
