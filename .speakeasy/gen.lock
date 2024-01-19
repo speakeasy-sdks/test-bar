@@ -4,9 +4,9 @@ management:
   docChecksum: 8f27a31f7c8db7031d59e44e22e0a9d2
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.234.3
-  releaseVersion: 0.8.1
-  configChecksum: 747880a1dbba2ea1899817d3f98b8e7c
+  generationVersion: 2.237.2
+  releaseVersion: 0.8.2
+  configChecksum: 33f9e4354ca219db7b935f7d37ff73f1
   repoURL: https://github.com/speakeasy-sdks/test-bar.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/test-bar
@@ -16,10 +16,10 @@ features:
     core: 3.3.1
     errors: 2.81.8
     examples: 2.81.3
-    globalSecurity: 2.82.3
+    globalSecurity: 2.82.4
     globalServerURLs: 2.82.1
     inputOutputModels: 2.83.0
-    methodSecurity: 2.82.1
+    methodSecurity: 2.82.2
     serverIDs: 2.81.1
 generatedFiles:
   - authentication.go
@@ -30,7 +30,6 @@ generatedFiles:
   - testbar.go
   - go.mod
   - go.sum
-  - tests/helpers.go
   - pkg/models/sdkerrors/sdkerror.go
   - pkg/types/bigint.go
   - pkg/types/date.go
