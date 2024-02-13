@@ -4,9 +4,9 @@ management:
   docChecksum: 8f27a31f7c8db7031d59e44e22e0a9d2
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.250.2
-  releaseVersion: 0.9.0
-  configChecksum: 5c51fe9a0cbffd9e49226c9238201fda
+  generationVersion: 2.253.0
+  releaseVersion: 0.9.1
+  configChecksum: c0c59e4e17f9a4417b2214f21b8c45fa
   repoURL: https://github.com/speakeasy-sdks/test-bar.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/test-bar
