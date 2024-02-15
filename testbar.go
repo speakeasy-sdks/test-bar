@@ -6,6 +6,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/speakeasy-sdks/test-bar/internal/hooks"
 	"github.com/speakeasy-sdks/test-bar/pkg/models/shared"
 	"github.com/speakeasy-sdks/test-bar/pkg/utils"
 	"net/http"
@@ -64,6 +65,7 @@ type sdkConfiguration struct {
 	GenVersion        string
 	UserAgent         string
 	RetryConfig       *utils.RetryConfig
+	Hooks             *hooks.Hooks
 }
 
 func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
@@ -227,9 +229,9 @@ func New(opts ...SDKOption) *TestBar {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "0.9.1",
-			GenVersion:        "2.253.0",
-			UserAgent:         "speakeasy-sdk/go 0.9.1 2.253.0 1.0.0 github.com/speakeasy-sdks/test-bar",
+			SDKVersion:        "0.10.0",
+			GenVersion:        "2.258.2",
+			UserAgent:         "speakeasy-sdk/go 0.10.0 2.258.2 1.0.0 github.com/speakeasy-sdks/test-bar",
 			ServerDefaults: map[string]map[string]string{
 				"prod":    {},
 				"staging": {},
@@ -238,11 +240,14 @@ func New(opts ...SDKOption) *TestBar {
 					"organization": "api",
 				},
 			},
+			Hooks: hooks.New(),
 		},
 	}
 	for _, opt := range opts {
 		opt(sdk)
 	}
+
+	sdk.sdkConfiguration.DefaultClient = sdk.sdkConfiguration.Hooks.ClientInit(sdk.sdkConfiguration.DefaultClient)
 
 	// Use WithClient to override the default client if you would like to customize the timeout
 	if sdk.sdkConfiguration.DefaultClient == nil {
