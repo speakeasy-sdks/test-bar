@@ -72,6 +72,7 @@ Get a list of drinks, if authenticated this will include stock levels and produc
 package main
 
 import(
+	"github.com/speakeasy-sdks/test-bar/pkg/models/shared"
 	testbar "github.com/speakeasy-sdks/test-bar"
 	"context"
 	"github.com/speakeasy-sdks/test-bar/pkg/models/operations"
@@ -79,7 +80,9 @@ import(
 )
 
 func main() {
-    s := testbar.New()
+    s := testbar.New(
+        testbar.WithSecurity("<YOUR_API_KEY_HERE>"),
+    )
 
     ctx := context.Background()
     res, err := s.Drinks.ListDrinks(ctx, operations.ListDrinksRequest{})

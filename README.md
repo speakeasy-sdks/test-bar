@@ -105,14 +105,11 @@ import (
 	testbar "github.com/speakeasy-sdks/test-bar"
 	"github.com/speakeasy-sdks/test-bar/pkg/models/operations"
 	"github.com/speakeasy-sdks/test-bar/pkg/models/sdkerrors"
-	"github.com/speakeasy-sdks/test-bar/pkg/models/shared"
 	"log"
 )
 
 func main() {
-	s := testbar.New(
-		testbar.WithSecurity("<YOUR_API_KEY_HERE>"),
-	)
+	s := testbar.New()
 
 	ctx := context.Background()
 	res, err := s.Authentication.Authenticate(ctx, operations.AuthenticateRequestBody{})
@@ -159,14 +156,12 @@ import (
 	"context"
 	testbar "github.com/speakeasy-sdks/test-bar"
 	"github.com/speakeasy-sdks/test-bar/pkg/models/operations"
-	"github.com/speakeasy-sdks/test-bar/pkg/models/shared"
 	"log"
 )
 
 func main() {
 	s := testbar.New(
 		testbar.WithServer("customer"),
-		testbar.WithSecurity("<YOUR_API_KEY_HERE>"),
 	)
 
 	ctx := context.Background()
@@ -198,14 +193,12 @@ import (
 	"context"
 	testbar "github.com/speakeasy-sdks/test-bar"
 	"github.com/speakeasy-sdks/test-bar/pkg/models/operations"
-	"github.com/speakeasy-sdks/test-bar/pkg/models/shared"
 	"log"
 )
 
 func main() {
 	s := testbar.New(
 		testbar.WithServerURL("https://speakeasy.bar"),
-		testbar.WithSecurity("<YOUR_API_KEY_HERE>"),
 	)
 
 	ctx := context.Background()

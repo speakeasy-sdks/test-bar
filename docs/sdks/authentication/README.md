@@ -19,7 +19,6 @@ Authenticate with the API by providing a username and password.
 package main
 
 import(
-	"github.com/speakeasy-sdks/test-bar/pkg/models/shared"
 	testbar "github.com/speakeasy-sdks/test-bar"
 	"context"
 	"github.com/speakeasy-sdks/test-bar/pkg/models/operations"
@@ -27,9 +26,7 @@ import(
 )
 
 func main() {
-    s := testbar.New(
-        testbar.WithSecurity("<YOUR_API_KEY_HERE>"),
-    )
+    s := testbar.New()
 
     ctx := context.Background()
     res, err := s.Authentication.Authenticate(ctx, operations.AuthenticateRequestBody{})
