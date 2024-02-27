@@ -4,9 +4,9 @@ management:
   docChecksum: 8f27a31f7c8db7031d59e44e22e0a9d2
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.272.4
-  releaseVersion: 0.11.0
-  configChecksum: 2aea3a0f2acdb78b9eccecf8d8d88f7c
+  generationVersion: 2.272.7
+  releaseVersion: 0.11.1
+  configChecksum: b6d2056790dbf2690186400ab261ebb2
   repoURL: https://github.com/speakeasy-sdks/test-bar.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/test-bar
@@ -16,7 +16,7 @@ features:
     core: 3.4.3
     errors: 2.81.8
     examples: 2.81.3
-    globalSecurity: 2.82.7
+    globalSecurity: 2.82.8
     globalServerURLs: 2.82.1
     inputOutputModels: 2.83.0
     serverIDs: 2.81.1
