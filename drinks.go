@@ -141,7 +141,7 @@ func (s *Drinks) ListDrinks(ctx context.Context, request operations.ListDrinksRe
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "listDrinks",
-		SecuritySource: s.sdkConfiguration.Security,
+		SecuritySource: nil,
 	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
@@ -161,7 +161,7 @@ func (s *Drinks) ListDrinks(ctx context.Context, request operations.ListDrinksRe
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
+	client := s.sdkConfiguration.DefaultClient
 
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
