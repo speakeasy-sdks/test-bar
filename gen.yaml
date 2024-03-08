@@ -12,7 +12,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 go:
-  version: 0.12.0
+  version: 0.13.0
   additionalDependencies: {}
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
@@ -28,3 +28,4 @@ go:
   maxMethodParams: 0
   outputModelSuffix: output
   packageName: github.com/speakeasy-sdks/test-bar
+  responseFormat: envelope

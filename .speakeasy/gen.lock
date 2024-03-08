@@ -3,10 +3,10 @@ id: d95bce65-1de1-4cc1-b1fe-ee714ee187ce
 management:
   docChecksum: 8f27a31f7c8db7031d59e44e22e0a9d2
   docVersion: 1.0.0
-  speakeasyVersion: internal
-  generationVersion: 2.275.4
-  releaseVersion: 0.12.0
-  configChecksum: 44cc93c5d834c820e10b9619d4217a56
+  speakeasyVersion: 1.204.1
+  generationVersion: 2.279.1
+  releaseVersion: 0.13.0
+  configChecksum: de02a300d6b9b0a6275671c7cf82ebf5
   repoURL: https://github.com/speakeasy-sdks/test-bar.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/test-bar
@@ -14,12 +14,13 @@ management:
 features:
   go:
     callbacks: 1.0.0
-    core: 3.4.3
+    core: 3.4.4
     errors: 2.81.8
     examples: 2.81.3
     globalSecurity: 2.82.8
     globalServerURLs: 2.82.1
     inputOutputModels: 2.83.0
+    responseFormat: 0.1.0
     serverIDs: 2.81.1
     webhooks: 1.0.0
 generatedFiles:
